@@ -1,0 +1,27 @@
+.header {
+  border: 2px solid grey;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 80px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+}
+
+/* Increase the font size of the h1 element */
+.header h1 {
+  font-size: 40px;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1abc9c;
+  color: black;
+  border: 2px solid green;
+}
+.footer li {
+  list-style: none;
+  padding: 3px;
+}

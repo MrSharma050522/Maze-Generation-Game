@@ -1,0 +1,46 @@
+.modal {
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  justify-content: center;
+  text-align: center;
+  justify-self: center;
+}
+
+.modalContent {
+  justify-self: center;
+  background-color: #86af49;
+  margin: auto;
+  padding: 20px;
+  border: 3px solid green;
+  border-radius: 10px;
+  width: 80%;
+  color: #034f84;
+}
+.modalContent h1 u {
+  cursor: pointer;
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 30px;
+  font-weight: lighter;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 30px;
+}

@@ -1,0 +1,5 @@
+.maze {
+  display: flex;
+  justify-content: center;
+  justify-self: center;
+}
