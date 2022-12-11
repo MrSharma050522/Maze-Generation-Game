@@ -16,6 +16,9 @@ const Header = (props) => {
           <li>
             <NavLink to="/">Home</NavLink>
           </li>
+          <li>
+            <NavLink to="/scoreboard">Score-Board</NavLink>
+          </li>
           {!isLoggedIn && (
             <li>
               <NavLink to="/auth">Auth</NavLink>
@@ -24,9 +27,6 @@ const Header = (props) => {
 
           <li>
             <NavLink to={isLoggedIn ? "/profile" : "/auth"}>Start Game</NavLink>
-          </li>
-          <li>
-            <NavLink to="/scoreboard">Score-Board</NavLink>
           </li>
 
           {isLoggedIn && (
