@@ -23,7 +23,10 @@ const Header = (props) => {
           )}
 
           <li>
-            <NavLink to={isLoggedIn ? "/profile" : "/auth"}>Profile</NavLink>
+            <NavLink to={isLoggedIn ? "/profile" : "/auth"}>Start Game</NavLink>
+          </li>
+          <li>
+            <NavLink to="/scoreboard">Score-Board</NavLink>
           </li>
 
           {isLoggedIn && (

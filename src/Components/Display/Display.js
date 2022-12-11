@@ -1,7 +1,6 @@
 import { Fragment, useContext, useEffect, useState } from "react";
 import Celebration from "./Confetti";
 import { DataContext } from "../../Store/Data-Context";
-import Control from "../Controls/Control";
 import Form from "../Form/Form";
 import GenerateMaze from "../MazeGenerator";
 import WinningModal from "../Modal/WinningModal";

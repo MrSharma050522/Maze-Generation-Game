@@ -24,17 +24,43 @@ export const DataProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(
     localStorage.getItem("isLoggedIn")
   );
+
   const logoutHandler = () => {
     setIsLoggedIn(null);
     // console.log(isLoggedIn);
     setName(" . . . ");
     localStorage.removeItem("isLoggedIn");
   };
+
   const loginHandler = () => {
     setIsLoggedIn(true);
-    console.log(isLoggedIn);
+    // console.log(isLoggedIn);
     localStorage.setItem("isLoggedIn", isLoggedIn);
   };
+
+  async function scoreHandler(score, winningDate) {
+    const response = await fetch(
+      "https://maze-generator-project-default-rtdb.firebaseio.com/score-data.json",
+      {
+        mode: "no-cors",
+        method: "POST",
+        body: JSON.stringify({
+          player: name,
+          score: score,
+          date: winningDate,
+        }),
+        ok: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const data = await response.json();
+    console.log(data);
+
+    // console.log(name, score);
+  }
 
   const value = {
     size,
@@ -56,6 +82,7 @@ export const DataProvider = ({ children }) => {
     logout: logoutHandler,
     modalText,
     setModalText,
+    scoreHandler,
   };
 
   return <DataContext.Provider value={value}>{children}</DataContext.Provider>;

@@ -1,0 +1,21 @@
+.data {
+  margin: 1rem;
+  padding: 1rem;
+  background-color: #1abc9c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+}
+
+.data h3 {
+  font-size: 2rem;
+  font-weight: bolder;
+  color: rgb(66, 65, 151);
+}
+
+/* .data h2 {
+  color: #4159e0;
+  margin: 0;
+  font-size: 1rem;
+} */

@@ -10,7 +10,7 @@ let count = 0;
 
 const Timer = (props) => {
   const [time, setTime] = useState(props.value);
-  const { gameFinished, setDisplayModal, setModalText } =
+  const { gameFinished, setDisplayModal, setModalText, scoreHandler } =
     useContext(DataContext);
 
   const tick = useCallback(() => {
@@ -36,6 +36,20 @@ const Timer = (props) => {
     }
     if (gameFinished) {
       clearInterval(timer);
+      const now = new Date();
+      const options = {
+        hour: "2-digit",
+        minute: "2-digit",
+        day: "numeric",
+        month: "short",
+        // month: "long",
+        year: "numeric",
+        weekday: "short",
+      };
+      const locale = navigator.language;
+      const winningDate = new Intl.DateTimeFormat(locale, options).format(now);
+      console.log(typeof winningDate);
+      scoreHandler(time, winningDate);
       setTime((time) => time);
       return;
     }
@@ -58,6 +72,7 @@ const Timer = (props) => {
       setTime(time);
     }
   };
+
   const gameStartHandler = () => {
     if (time) {
       timer = setInterval(tick, time);

@@ -1,6 +1,9 @@
 import React, { Fragment, useContext, useEffect, useState } from "react";
 import { DataContext } from "../Store/Data-Context";
+import classes from "./Controls/Control.module.css";
 import Timer from "./Timer/Timer";
+
+let start;
 
 const GenerateMaze = (props) => {
   const {
@@ -10,8 +13,12 @@ const GenerateMaze = (props) => {
     setGameFinished,
     setDisplayModal,
     setModalText,
+    setStartPlaying,
+    isLoggedIn,
   } = useContext(DataContext);
   const [startTimer, setStartTimer] = useState(false);
+  start = startPlaying;
+
   let maze = document.getElementById("maze");
   let context = maze.getContext("2d");
   let current;
@@ -83,6 +90,7 @@ const GenerateMaze = (props) => {
       // If no more items in the stack then all cells have been visted and the function can be exited
       if (this.stack.length === 0) {
         generationComplete = true;
+        // setStartPlaying(true);
         return;
       }
 
@@ -251,17 +259,21 @@ const GenerateMaze = (props) => {
   //   event.preventDefault();
   //   startPlaying = false;
   // };
-
+  // let keyPressEvent;
   useEffect(() => {
     newMaze = new Mazze(size, row, row);
     newMaze.setup();
     newMaze.draw();
+    document.addEventListener("keydown", move);
+    return () => {
+      document.removeEventListener("keydown", move);
+    };
   }, []);
 
   /*-----HANDLING-EVENTS-----*/
 
-  // console.log(startPlaying);
-  document.addEventListener("keydown", move);
+  // console.log(start);
+  // console.log(isLoggedIn);
 
   const isAtFinishedLine = (obj) => {
     if (obj.rowNum === row - 1 && obj.colNum === row - 1) {
@@ -280,14 +292,14 @@ const GenerateMaze = (props) => {
 
   function move(e) {
     e.preventDefault();
+
     // console.log("entered");
-    // console.log(startPlaying);
-
+    // console.log(start);
     // console.log("exit");
+    // setStartTimer(true);
 
-    setStartTimer(true);
     if (!generationComplete) return;
-    // if (!startPlaying) return;
+    if (!start) return;
     let key = e.key;
     let row = current.rowNum;
     let col = current.colNum;
@@ -339,11 +351,30 @@ const GenerateMaze = (props) => {
         isAtFinishedLine(current);
         break;
     }
+    // console.log("at the end");
   }
 
   /*-----------------------------------------------------------------------*/
 
-  return <Fragment>{startTimer && <Timer value={20} />}</Fragment>;
+  return (
+    <Fragment>
+      {startTimer && <Timer value={65} />}
+
+      {!startTimer && (
+        <button
+          className={`${classes.button} ${classes.button1}`}
+          onClick={() => {
+            if (generationComplete) {
+              setStartTimer(true);
+              setStartPlaying(true);
+            }
+          }}
+        >
+          Start
+        </button>
+      )}
+    </Fragment>
+  );
 };
 
 export default GenerateMaze;

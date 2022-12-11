@@ -1,4 +1,4 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./Home.module.css";
@@ -8,7 +8,6 @@ const Home = () => {
 
   return (
     <Fragment>
-      {" "}
       <div className={classes.header}>
         <h1>!! {name} !!</h1>
         <h2>Welcome to Maze Generator Game </h2>
