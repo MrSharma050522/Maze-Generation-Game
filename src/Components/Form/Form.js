@@ -1,6 +1,6 @@
-import { Fragment, useContext, useRef, useState } from "react";
+import { useContext, useRef } from "react";
 import { DataContext } from "../../Store/Data-Context";
-import "./Form.css";
+import classes from "./Form.module.css";
 
 const Form = (props) => {
   const nameInputRef = useRef();
@@ -23,38 +23,37 @@ const Form = (props) => {
   };
 
   return (
-    <Fragment>
-      <form className="form" onSubmit={submitFormHandler}>
-        <label htmlFor="name">Name : </label>
-        <input
-          type="text"
-          required
-          placeholder="Please Enter Your Name"
-          ref={nameInputRef}
-          defaultValue={name}
-        />
-        <br></br>
-        <label htmlFor="level">Select your level : </label>
-        <select name="level" ref={rowInputRef}>
-          <option value="10">Basic</option>
-          <option value="20">Easy</option>
-          <option value="25">Medium</option>
-          <option value="30">Hard</option>
-          <option value="40">Challenge</option>
-        </select>
-        <br></br>
-        <label htmlFor="size">Size : </label>
-        <input
-          type="number"
-          required
-          placeholder="Plese Enter Size"
-          min={200}
-          max={900}
-          defaultValue={350}
-          ref={sizeInputRef}
-        />
-        <br></br>
-        {/* <label htmlFor="row-column">Rows OR Columns : </label>
+    <form className={classes.form} onSubmit={submitFormHandler}>
+      <label htmlFor="name">Name : </label>
+      <input
+        type="text"
+        required
+        placeholder="Please Enter Your Name"
+        ref={nameInputRef}
+        defaultValue={name}
+      />
+      <br></br>
+      <label htmlFor="level">Select your level : </label>
+      <select name="level" ref={rowInputRef}>
+        <option value="10">Basic</option>
+        <option value="20">Easy</option>
+        <option value="25">Medium</option>
+        <option value="30">Hard</option>
+        <option value="40">Challenge</option>
+      </select>
+      <br></br>
+      <label htmlFor="size">Size : </label>
+      <input
+        type="number"
+        required
+        placeholder="Plese Enter Size"
+        min={200}
+        max={900}
+        defaultValue={350}
+        ref={sizeInputRef}
+      />
+      <br></br>
+      {/* <label htmlFor="row-column">Rows OR Columns : </label>
         <input
           type="number"
           required
@@ -64,9 +63,8 @@ const Form = (props) => {
           ref={rowInputRef}
         /> */}
 
-        <input type="submit" value="Submit" />
-      </form>
-    </Fragment>
+      <input type="submit" value="Submit" />
+    </form>
   );
 };
 

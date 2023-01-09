@@ -1,5 +1,17 @@
+* {
+  font-family: cursive;
+}
 body {
-  background-color: aqua;
+  /* background-color: aqua; */
+  background-image: radial-gradient(
+    circle,
+    #e98132,
+    #fa3d43,
+    #f7006f,
+    #cb00ae,
+    #200df0
+  );
+  /* overflow-y: hidden; */
 }
 
 .App {
@@ -7,5 +19,29 @@ body {
   justify-content: center;
   justify-self: center;
   /* width: 300px; */
-  background-color: aqua;
+  /* background-color: aqua; */
+}
+.active {
+  color: #c3195d;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #666666;
+  border-radius: 3px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background-color: #212f42;
+  border-radius: 3px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

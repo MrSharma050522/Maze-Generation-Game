@@ -6,7 +6,7 @@ const ScoreBoard = (props) => {
 
   useEffect(() => {
     const fetchDataHandler = () => {
-      const response = fetch(
+      fetch(
         "https://maze-generator-project-default-rtdb.firebaseio.com/score-data.json"
       )
         .then((response) => response.json())

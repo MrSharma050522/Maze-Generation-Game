@@ -38,28 +38,26 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem("isLoggedIn", isLoggedIn);
   };
 
-  async function scoreHandler(score, winningDate) {
-    const response = await fetch(
+  function scoreHandler(score, winningDate) {
+    fetch(
       "https://maze-generator-project-default-rtdb.firebaseio.com/score-data.json",
       {
         mode: "no-cors",
         method: "POST",
+        ok: true,
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           player: name,
           score: score,
           date: winningDate,
         }),
-        ok: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
       }
-    );
-
-    const data = await response.json();
-    console.log(data);
-
-    // console.log(name, score);
+    )
+      .then((res) => res.json())
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err.message));
   }
 
   const value = {

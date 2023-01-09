@@ -26,7 +26,25 @@ input[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  cursor: pointer;
+  /* font: inherit; */
+  color: white;
+  background-color: #ff347f;
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 0.5rem 2.5rem;
 }
+/* 
+input[type="submit"] {
+  width: 100%;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+} */
 select {
   width: 100%;
   padding: 12px 20px;
@@ -38,14 +56,30 @@ select {
 }
 
 input[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #c9356c;
+  border-color: yellow;
 }
 
 .form {
   border-radius: 5px;
   background-color: #f2f2f2;
+  background-image: linear-gradient(
+    to left bottom,
+    #94b51e,
+    #c59600,
+    #e96c1b,
+    #f83851,
+    #ea0089,
+    #df0099,
+    #d000aa,
+    #bc00bb,
+    #e00095,
+    #f3006c,
+    #f80042,
+    #f01111
+  );
+  box-shadow: 0px 0px 10px 5px yellow;
   padding: 20px;
-  border: 10px inset green;
   padding: 50px;
   margin: 20px;
 }

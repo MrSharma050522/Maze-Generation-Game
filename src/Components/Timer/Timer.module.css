@@ -4,8 +4,22 @@
   text-align: center;
   width: 40%;
   height: 10vh;
-  background: #1abc9c;
-  color: white;
+  background-image: linear-gradient(
+    to right top,
+    #2d11ec,
+    #a800c1,
+    #d60094,
+    #ea006d,
+    #ed004e,
+    #ed004e,
+    #ed004e,
+    #ed004e,
+    #ea006d,
+    #d60094,
+    #a800c1,
+    #2d11ec
+  );
+  color: #00204a;
   /* font-size: 18px; */
   text-shadow: 5px 5px 4px red;
   right: 20px;

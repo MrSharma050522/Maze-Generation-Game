@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./PlayerData.module.css";
 
 const PlayerData = (props) => {
-  console.log(props.date);
+  // console.log(props.date);
   return (
     <li className={classes.data}>
       <h3>

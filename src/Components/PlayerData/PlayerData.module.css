@@ -2,6 +2,21 @@
   margin: 1rem;
   padding: 1rem;
   background-color: #1abc9c;
+  background-image: linear-gradient(
+    to right top,
+    #2a1eb5,
+    #392cc0,
+    #4739cc,
+    #5446d7,
+    #6053e3,
+    #6f62e8,
+    #7e72ed,
+    #8c81f2,
+    #9f96f1,
+    #b2abef,
+    #c5c0ec,
+    #d7d5e9
+  );
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
   text-align: center;

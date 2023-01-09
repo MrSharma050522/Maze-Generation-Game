@@ -7,8 +7,8 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
   justify-content: center;
   text-align: center;
   justify-self: center;
@@ -16,15 +16,34 @@
 
 .modalContent {
   justify-self: center;
-  background-color: #86af49;
+  background-image: linear-gradient(
+    to right top,
+    #ec1141,
+    #ed005d,
+    #e5007b,
+    #d4009b,
+    #b700b9,
+    #9649da,
+    #686af2,
+    #0082ff,
+    #00acff,
+    #00cbf9,
+    #00e0a3,
+    #11ec24
+  );
   margin: auto;
   padding: 20px;
-  border: 3px solid green;
+  box-shadow: 0px 0px 10px 10px yellow;
   border-radius: 10px;
   width: 80%;
   color: #034f84;
 }
 .modalContent h1 u {
+  color: #00204a;
+  cursor: pointer;
+}
+.modalContent h1 u:hover {
+  color: #393e46;
   cursor: pointer;
 }
 
@@ -33,13 +52,13 @@
   color: white;
   float: right;
   font-size: 30px;
-  font-weight: lighter;
+  font-weight: bolder;
 }
 
 .close:hover,
 .close:focus {
   color: red;
-  text-decoration: none;
+  /* text-decoration: none; */
   cursor: pointer;
   font-weight: bolder;
   font-size: 30px;

@@ -48,7 +48,7 @@ const Timer = (props) => {
       };
       const locale = navigator.language;
       const winningDate = new Intl.DateTimeFormat(locale, options).format(now);
-      console.log(typeof winningDate);
+      // console.log(typeof winningDate);
       scoreHandler(time, winningDate);
       setTime((time) => time);
       return;
@@ -56,7 +56,7 @@ const Timer = (props) => {
     // console.log("inside", timer, time);
     setTime((time) => time - 1);
     // console.log(time);
-  }, [gameFinished, setDisplayModal, setModalText, time]);
+  }, [gameFinished, setDisplayModal, setModalText, time, scoreHandler]);
 
   useEffect(() => {
     if (timer) {

@@ -14,7 +14,6 @@ const GenerateMaze = (props) => {
     setDisplayModal,
     setModalText,
     setStartPlaying,
-    isLoggedIn,
   } = useContext(DataContext);
   const [startTimer, setStartTimer] = useState(false);
   start = startPlaying;
@@ -349,6 +348,8 @@ const GenerateMaze = (props) => {
           // if (current.goal) complete.style.display = "block";
         }
         isAtFinishedLine(current);
+        break;
+      default:
         break;
     }
     // console.log("at the end");

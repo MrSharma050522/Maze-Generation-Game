@@ -1,17 +1,26 @@
 .header {
-  width: 78vw;
+  width: auto;
   height: 15vh;
-  background: #1abc9c;
-  color: white;
+  background: #9fd3c7;
+  background-image: radial-gradient(
+    circle,
+    #327be9,
+    #00a2ff,
+    #00c2f7,
+    #00dcd2,
+    #0df0a1
+  );
+  color: #c3195d;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 0 5%;
   margin-bottom: 20px;
   justify-content: flex-start;
-  text-shadow: 5px 5px 4px red;
-  border: 4px inset grey;
+  /* text-shadow: 5px 5px 4px red; */
+  border: 1px solid grey;
   border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #c3195d;
 }
 
 /* .header {
@@ -33,14 +42,14 @@
   margin-block-end: 0.5em;
   margin-inline-start: 90px;
   margin-inline-end: 0px;
-  font-weight: bold;
+  /* font-weight: bold; */
   justify-content: space-evenly;
 }
 
 .header ul {
   list-style: none;
-  margin-inline-start: 0px;
-  padding-left: 0px;
+  /* margin-inline-start: 0px;
+  padding-left: 0px; */
   display: flex;
   justify-content: flex-start;
 }
@@ -51,6 +60,10 @@
 
 .header a {
   text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #142d4c;
+  /* font-weight: bold; */
+}
+.header nav ul li a:hover {
+  text-decoration: none;
+  color: #00aaa0;
 }

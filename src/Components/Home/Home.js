@@ -1,4 +1,4 @@
-import { Fragment, useContext, useEffect, useState } from "react";
+import { Fragment, useContext} from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./Home.module.css";
@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <Fragment>
       <div className={classes.header}>
-        <h1>!! {name} !!</h1>
+        <h1>!! {name ? name : "Guest"} !!</h1>
         <h2>Welcome to Maze Generator Game </h2>
         <h3>Here you you can generate you own maze </h3>
         <h4>Play at your conditions</h4>
@@ -19,15 +19,15 @@ const Home = () => {
         <nav>
           <ul>
             <li>
-              Not Logged !
+              Click here to :
               <Link to="/auth">
-                <u> Click here</u>
+                <u> Log In</u>
               </Link>
             </li>
             <li>
-              Logged In !
+              Click here to :
               <Link to="/profile">
-                <u> Click here</u>
+                <u>Start!</u>
               </Link>
             </li>
           </ul>

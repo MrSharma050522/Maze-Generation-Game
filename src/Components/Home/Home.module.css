@@ -5,7 +5,22 @@
   padding: 80px;
   text-align: center;
   background: #1abc9c;
-  color: white;
+  color: #27296d;
+  background-image: linear-gradient(
+    to right top,
+    #e05454,
+    #e33665,
+    #dd097c,
+    #cd0099,
+    #ad00b9,
+    #9044d8,
+    #6563f0,
+    #007bff,
+    #00a4ff,
+    #00bff0,
+    #00d19a,
+    #13da24
+  );
 }
 
 /* Increase the font size of the h1 element */
@@ -17,10 +32,34 @@
   left: 0;
   bottom: 0;
   width: 100%;
+  background: #9fd3c7;
+  background-image: radial-gradient(
+    circle,
+    #327be9,
+    #00a2ff,
+    #00c2f7,
+    #00dcd2,
+    #0df0a1
+  );
+  color: #c3195d;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+
+  /* text-shadow: 5px 5px 4px red; */
+  border: 1px solid grey;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 1px #c3195d;
+}
+/* .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
   background-color: #1abc9c;
   color: black;
   border: 2px solid green;
-}
+} */
 .footer li {
   list-style: none;
   padding: 3px;

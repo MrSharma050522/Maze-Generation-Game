@@ -4,19 +4,19 @@ import classes from "./Control.module.css";
 
 const Control = (props) => {
   const [isPaused, setIsPaused] = useState(false);
-  const { startPlaying, setStartPlaying } = useContext(DataContext);
+  const { setStartPlaying } = useContext(DataContext);
 
   const startMazeGeneration = (event) => {
     event.preventDefault();
     window.location.reload();
   };
 
-  const startPlayingHandler = (event) => {
-    event.preventDefault();
-    // console.log(startPlaying);
-    setStartPlaying(true);
-    // console.log(startPlaying);
-  };
+  // const startPlayingHandler = (event) => {
+  //   event.preventDefault();
+  //   // console.log(startPlaying);
+  //   setStartPlaying(true);
+  //   // console.log(startPlaying);
+  // };
 
   const pauseGameHandler = (event) => {
     event.preventDefault();

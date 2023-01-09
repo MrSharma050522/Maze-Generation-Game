@@ -3,12 +3,27 @@
   width: 95%;
   max-width: 25rem;
   border-radius: 6px;
+  background-image: linear-gradient(
+    to left bottom,
+    #94b51e,
+    #c59600,
+    #e96c1b,
+    #f83851,
+    #ea0089,
+    #df0099,
+    #d000aa,
+    #bc00bb,
+    #e00095,
+    #f3006c,
+    #f80042,
+    #f01111
+  );
   background-color: white;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2); */
   padding: 1rem;
   color: white;
   text-align: center;
-  border: 10px inset green;
+  box-shadow: 0px 0px 10px 5px yellow;
   border-radius: 5px;
 }
 
@@ -50,8 +65,8 @@
   cursor: pointer;
   /* font: inherit; */
   color: white;
-  background-color: #4caf50;
-  border: 1px solid #4caf50;
+  background-color: #ff347f;
+  border: 1px solid grey;
   border-radius: 4px;
   padding: 0.5rem 2.5rem;
 }
@@ -60,8 +75,8 @@
 }
 
 .actions button:hover {
-  background-color: #45a049;
-  border-color: #45a049;
+  background-color: #c9356c;
+  border-color: yellow;
 }
 
 .actions .toggle {
@@ -75,5 +90,5 @@
 
 .actions .toggle:hover {
   background-color: transparent;
-  color: rgb(10, 10, 78);
+  color: #8f71ff;
 }

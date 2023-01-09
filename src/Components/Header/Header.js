@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { NavLink, Route } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./Header.module.css";
 
@@ -14,24 +14,34 @@ const Header = (props) => {
       <nav>
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/">
+              <h3>Home</h3>
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/scoreboard">Score-Board</NavLink>
+            <NavLink to="/scoreboard">
+              <h3>Score-Board</h3>
+            </NavLink>
           </li>
           {!isLoggedIn && (
             <li>
-              <NavLink to="/auth">Auth</NavLink>
+              <NavLink to="/auth">
+                <h3>Auth</h3>
+              </NavLink>
             </li>
           )}
 
           <li>
-            <NavLink to={isLoggedIn ? "/profile" : "/auth"}>Start Game</NavLink>
+            <NavLink to={isLoggedIn ? "/profile" : "/auth"}>
+              <h3>Start Game</h3>
+            </NavLink>
           </li>
 
           {isLoggedIn && (
             <li>
-              <NavLink onClick={logoutHandler}>Logout</NavLink>
+              <NavLink onClick={logoutHandler}>
+                <h3>Logout</h3>
+              </NavLink>
             </li>
           )}
         </ul>
