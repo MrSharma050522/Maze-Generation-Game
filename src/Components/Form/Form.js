@@ -36,10 +36,10 @@ const Form = (props) => {
       <label htmlFor="level">Select your level : </label>
       <select name="level" ref={rowInputRef}>
         <option value="10">Basic</option>
-        <option value="20">Easy</option>
-        <option value="25">Medium</option>
-        <option value="30">Hard</option>
-        <option value="40">Challenge</option>
+        <option value="12">Easy</option>
+        <option value="15">Medium</option>
+        <option value="18">Hard</option>
+        <option value="20">Challenge</option>
       </select>
       <br></br>
       <label htmlFor="size">Size : </label>
