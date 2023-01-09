@@ -1,4 +1,5 @@
 import { useContext, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./AuthForm.module.css";
 
@@ -7,6 +8,7 @@ const AuthForm = () => {
   const passwordInputRef = useRef();
 
   const { login, isLoggedIn, setName } = useContext(DataContext);
+  const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
@@ -56,7 +58,8 @@ const AuthForm = () => {
         const name = data.email.split("@")[0];
         setName(name.split("")[0].toUpperCase() + name.substr(1));
         login();
-        console.log(isLoggedIn);
+        // console.log(isLoggedIn);
+        navigate("/profile");
       })
       .catch((error) => {
         alert(error.message);
