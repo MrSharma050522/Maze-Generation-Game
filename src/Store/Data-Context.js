@@ -29,7 +29,7 @@ export const DataProvider = ({ children }) => {
   const logoutHandler = () => {
     setIsLoggedIn(null);
     // console.log(isLoggedIn);
-    setName(" . . . ");
+    setName("Guest");
     localStorage.removeItem("isLoggedIn");
   };
 
@@ -51,10 +51,7 @@ export const DataProvider = ({ children }) => {
       }),
     })
       .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        console.log("Here again at soter");
-      })
+      .then((data) => {})
       .catch((err) => console.log(err.message));
   }
 

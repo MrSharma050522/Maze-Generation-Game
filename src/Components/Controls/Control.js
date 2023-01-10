@@ -11,13 +11,6 @@ const Control = (props) => {
     window.location.reload();
   };
 
-  // const startPlayingHandler = (event) => {
-  //   event.preventDefault();
-  //   // console.log(startPlaying);
-  //   setStartPlaying(true);
-  //   // console.log(startPlaying);
-  // };
-
   const pauseGameHandler = (event) => {
     event.preventDefault();
     if (isPaused) {

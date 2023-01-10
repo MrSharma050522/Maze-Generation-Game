@@ -1,4 +1,4 @@
-import { Fragment, useContext} from "react";
+import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./Home.module.css";

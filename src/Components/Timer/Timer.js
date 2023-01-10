@@ -1,4 +1,4 @@
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../Store/Data-Context";
 import Control from "../Controls/Control";
 import classes from "./Timer.module.css";
@@ -7,69 +7,81 @@ let timer;
 let min = "--",
   second = "--";
 let count = 0;
+let first = true;
 
 const Timer = (props) => {
-  const [time, setTime] = useState(props.value);
+  const [time, setTime] = useState(30);
+  const [isPaused, setIsPaused] = useState(false);
   const {
     gameFinished,
     setDisplayModal,
     setModalText,
     scoreHandler,
     displayModal,
+    setStartPlaying,
   } = useContext(DataContext);
 
-  const tick = useCallback(() => {
-    // console.log(gameFinished);
-
-    if (time < 1) {
+  useEffect(() => {
+    if (time <= 0) {
       setTime(null);
       clearInterval(timer);
     }
     min = `${Math.trunc(time / 60)}`.padStart(2, 0);
     second = String(time % 60).padStart(2, 0);
 
-    if (time < 1 && count === 0) {
+    if (time <= 0 && count === 0 && !gameFinished) {
       count++;
       clearInterval(timer);
       setTime(null);
       setDisplayModal("block");
+
       setModalText({
         firstText: " OOPS! Time's Up ",
         secondText: " Give Another Try!",
       });
       return;
     }
-    if (gameFinished && displayModal !== "none") {
+    if (gameFinished && displayModal !== "none" && time > 0) {
       clearInterval(timer);
-      scoreHandler(time);
+      if (first) {
+        scoreHandler(time);
+        first = false;
+      }
       console.log("Here again");
+      setStartPlaying(false);
+      setIsPaused(true);
       setTime((time) => time);
       return;
     }
-    // console.log("inside", timer, time);
-    setTime((time) => time - 1);
-    // console.log(time);
-  }, [gameFinished, setDisplayModal, setModalText, time, scoreHandler]);
-
-  useEffect(() => {
-    if (timer) {
-      clearInterval(timer);
+    if (isPaused) {
+      setTime((time) => time);
+      return;
+    } else {
+      timer = setInterval(() => {
+        setTime((time) => time - 1);
+      }, 1000);
     }
-    // console.log("useeffec", timer, time);
-    timer = setInterval(tick, 1000);
-  }, [tick]);
+    return () => {
+      clearInterval(timer);
+    };
+  }, [
+    time,
+    displayModal,
+    scoreHandler,
+    setDisplayModal,
+    setModalText,
+    gameFinished,
+    isPaused,
+    setStartPlaying,
+  ]);
 
   const gamePauseHandler = () => {
-    if (time) {
-      clearInterval(timer);
-      setTime(time);
-    }
+    setIsPaused(true);
   };
 
   const gameStartHandler = () => {
-    if (time) {
-      timer = setInterval(tick, time);
-      setTime(time);
+    if (!gameFinished) {
+      setIsPaused(false);
     }
   };
 
