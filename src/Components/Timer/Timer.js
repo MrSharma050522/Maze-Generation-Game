@@ -10,7 +10,7 @@ let count = 0;
 let first = true;
 
 const Timer = (props) => {
-  const [time, setTime] = useState(30);
+  const [time, setTime] = useState(props.value);
   const [isPaused, setIsPaused] = useState(false);
   const {
     gameFinished,
