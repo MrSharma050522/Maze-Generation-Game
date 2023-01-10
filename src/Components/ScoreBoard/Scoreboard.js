@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { backend_Url } from "../../App";
 import PlayerData from "../PlayerData/PlayerData";
 
 const ScoreBoard = (props) => {
@@ -6,17 +7,17 @@ const ScoreBoard = (props) => {
 
   useEffect(() => {
     const fetchDataHandler = () => {
-      fetch(
-        "https://maze-generator-project-default-rtdb.firebaseio.com/score-data.json"
-      )
+      fetch(`${backend_Url}/score/allscore`)
         .then((response) => response.json())
         .then((data) => {
+          const scores = data.scores;
+          // console.log(scores);
           let dataArray = [];
-          for (const key in data) {
+          for (let i = 0; i < scores.length; i++) {
             dataArray.push({
-              playerName: data[key].player,
-              playerScore: data[key].score,
-              date: data[key].date,
+              playerName: scores[i].player,
+              playerScore: scores[i].score,
+              date: new Date(scores[i].createdAt).toLocaleString(),
             });
           }
           setDisplayData(dataArray);

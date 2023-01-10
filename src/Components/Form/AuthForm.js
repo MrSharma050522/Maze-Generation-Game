@@ -1,5 +1,6 @@
 import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { backend_Url } from "../../App";
 import { DataContext } from "../../Store/Data-Context";
 import classes from "./AuthForm.module.css";
 
@@ -7,7 +8,7 @@ const AuthForm = () => {
   const emailInputRef = useRef();
   const passwordInputRef = useRef();
 
-  const { login, isLoggedIn, setName } = useContext(DataContext);
+  const { login, setName } = useContext(DataContext);
   const navigate = useNavigate();
 
   const [isLogin, setIsLogin] = useState(true);
@@ -19,54 +20,47 @@ const AuthForm = () => {
   };
   const submitFormHandler = (event) => {
     event.preventDefault();
-    const enteredEmail = emailInputRef.current.value;
-    const enteredPassword = passwordInputRef.current.value;
+    const email = emailInputRef.current.value;
+    const password = passwordInputRef.current.value;
 
     setIsLoading(true);
     let url;
     if (isLogin) {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyBJnkjWMhUO3lYD0hZBwa1lOle_xd_tdig";
+      url = `${backend_Url}/user/login`;
     } else {
-      url =
-        "https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBJnkjWMhUO3lYD0hZBwa1lOle_xd_tdig";
+      url = `${backend_Url}/user/register`;
     }
 
     fetch(url, {
       method: "POST",
       body: JSON.stringify({
-        email: enteredEmail,
-        password: enteredPassword,
-        returnSecureToken: true,
+        email,
+        password,
       }),
       headers: {
         "Content-Type": "application/json",
       },
     })
       .then((response) => {
-        setIsLoading(false);
-        if (response.ok) {
-          return response.json();
-        } else {
-          return response.json().then((data) => {
-            let erroMessage = "Authentication failed!";
-            throw new Error(erroMessage);
-          });
-        }
+        return response.json();
       })
       .then((data) => {
-        const name = data.email.split("@")[0];
-        setName(name.split("")[0].toUpperCase() + name.substr(1));
-        login();
-        // console.log(isLoggedIn);
-        navigate("/profile");
+        // console.log(data);
+        if (data.status === "success") {
+          const name = data.user.email.split("@")[0];
+          setName(name.split("")[0].toUpperCase() + name.substr(1));
+          login();
+          setIsLoading(false);
+          // console.log(isLoggedIn);
+          navigate("/profile");
+        }
       })
       .catch((error) => {
         alert(error.message);
       });
     emailInputRef.current.value = "";
     passwordInputRef.current.value = "";
-    console.log(enteredEmail, enteredPassword);
+    // console.log(enteredEmail, enteredPassword);
   };
 
   return (

@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { backend_Url } from "../App";
 
 export const DataContext = createContext({
   size: 0,
@@ -38,25 +39,22 @@ export const DataProvider = ({ children }) => {
     localStorage.setItem("isLoggedIn", isLoggedIn);
   };
 
-  function scoreHandler(score, winningDate) {
-    fetch(
-      "https://maze-generator-project-default-rtdb.firebaseio.com/score-data.json",
-      {
-        mode: "no-cors",
-        method: "POST",
-        ok: true,
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          player: name,
-          score: score,
-          date: winningDate,
-        }),
-      }
-    )
+  function scoreHandler(score) {
+    fetch(`${backend_Url}/score/addscore`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        player: name,
+        score: score,
+      }),
+    })
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        console.log(data);
+        console.log("Here again at soter");
+      })
       .catch((err) => console.log(err.message));
   }
 

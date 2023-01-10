@@ -10,6 +10,8 @@ import HomePage from "./Pages/HomePage";
 import ProfilePage from "./Pages/ProfilePage";
 import { DataContext } from "./Store/Data-Context";
 
+export const backend_Url = "https://maze-generator-game-backend.onrender.com";
+
 function App() {
   const { isLoggedIn } = useContext(DataContext);
 
