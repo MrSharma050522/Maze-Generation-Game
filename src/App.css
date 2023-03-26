@@ -1,16 +1,16 @@
 * {
-  font-family: cursive;
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 body {
-  /* background-color: aqua; */
-  background-image: radial-gradient(
+  background-color: aqua;
+  /* background-image: radial-gradient(
     circle,
     #e98132,
     #fa3d43,
     #f7006f,
     #cb00ae,
     #200df0
-  );
+  ); */
   /* overflow-y: hidden; */
 }
 

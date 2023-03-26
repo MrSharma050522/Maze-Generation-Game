@@ -63,7 +63,7 @@ input[type="submit"]:hover {
 .form {
   border-radius: 5px;
   background-color: #f2f2f2;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to left bottom,
     #94b51e,
     #c59600,
@@ -77,8 +77,8 @@ input[type="submit"]:hover {
     #f3006c,
     #f80042,
     #f01111
-  );
-  box-shadow: 0px 0px 10px 5px yellow;
+  ); */
+  box-shadow: 0px 0px 10px 5px rgb(75, 75, 73);
   padding: 20px;
   padding: 50px;
   margin: 20px;

@@ -6,7 +6,7 @@
   text-align: center;
   background: #1abc9c;
   color: #27296d;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #e05454,
     #e33665,
@@ -20,7 +20,7 @@
     #00bff0,
     #00d19a,
     #13da24
-  );
+  ); */
 }
 
 /* Increase the font size of the h1 element */
@@ -33,14 +33,14 @@
   bottom: 0;
   width: 100%;
   background: #9fd3c7;
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle,
     #327be9,
     #00a2ff,
     #00c2f7,
     #00dcd2,
     #0df0a1
-  );
+  ); */
   color: #c3195d;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   display: flex;

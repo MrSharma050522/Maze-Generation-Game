@@ -16,7 +16,8 @@
 
 .modalContent {
   justify-self: center;
-  background-image: linear-gradient(
+  background: #0d89e2;
+  /* background-image: linear-gradient(
     to right top,
     #ec1141,
     #ed005d,
@@ -30,10 +31,10 @@
     #00cbf9,
     #00e0a3,
     #11ec24
-  );
+  ); */
   margin: auto;
   padding: 20px;
-  box-shadow: 0px 0px 10px 10px yellow;
+  box-shadow: 0px 0px 10px 10px rgb(94, 94, 92);
   border-radius: 10px;
   width: 80%;
   color: #034f84;

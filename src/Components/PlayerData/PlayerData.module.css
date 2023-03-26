@@ -2,7 +2,7 @@
   margin: 1rem;
   padding: 1rem;
   background-color: #1abc9c;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #2a1eb5,
     #392cc0,
@@ -16,7 +16,7 @@
     #b2abef,
     #c5c0ec,
     #d7d5e9
-  );
+  ); */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   border-radius: 12px;
   text-align: center;

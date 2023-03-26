@@ -4,7 +4,7 @@
 }
 
 .button {
-  background-color: #4caf50; /* Green */
+  background-color: #34c410f6; /* Green */
   border: 1px solid #4caf50;
   border-radius: 2px;
   color: white;
@@ -18,20 +18,21 @@
   cursor: pointer;
 }
 .button1 {
-  background-image: linear-gradient(
+  /* background: #574f50; */
+  /* background-image: linear-gradient(
     to right top,
     #3f15d6,
     #af00aa,
     #de0077,
     #ef0045,
     #eb1212
-  );
+  ); */
   color: black;
   border: 1px solid yellow;
 }
 
 .button1:hover {
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle,
     #2d11ec,
     #a800c1,
@@ -45,25 +46,25 @@
     #d60094,
     #a800c1,
     #2d11ec
-  );
+  ); */
   color: white;
   border: 1px solid yellow;
 }
 .button2 {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right top,
     #3f15d6,
     #af00aa,
     #de0077,
     #ef0045,
     #eb1212
-  );
+  ); */
   color: black;
   border: 1px solid yellow;
 }
 
 .button2:hover {
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle,
     #2d11ec,
     #a800c1,
@@ -77,7 +78,7 @@
     #d60094,
     #a800c1,
     #2d11ec
-  );
+  ); */
   color: white;
   border: 1px solid yellow;
 }
