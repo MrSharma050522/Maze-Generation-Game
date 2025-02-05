@@ -11,7 +11,7 @@ const Home = () => {
       <div className={classes.header}>
         <h1>!! {name ? name : "Guest"} !!</h1>
         <h2>Welcome to Maze Generator Game </h2>
-        <h3>Here you you can generate you own maze </h3>
+        <h3>Here you can generate you own maze </h3>
         <h4>Play at your conditions</h4>
         <p>Have fun! </p>
       </div>
